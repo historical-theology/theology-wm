@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "Hack Nerd Font:size=10" };
+static const char dmenufont[]       = "Hack Nerd Font:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -63,7 +63,13 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browsercmd[] = { "firefox", NULL};
+/* Corey's custom commands */
+static const char *firefox[] = { "firefox", NULL};
+static const char *thunderbird[] = { "thunderbird", NULL};
+static const char *pcmanfmqt[] = { "pcmanfm-qt", NULL};
+static const char *zotero[] = { "zotero", NULL};
+
+
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -102,8 +108,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_f, 		spawn,   		{.v = browsercmd } },
-
+// Corey's custom launchers
+	{ MODKEY|ShiftMask,             XK_f, 		spawn,   		{.v = firefox } },
+	{ MODKEY|ShiftMask,             XK_t, 		spawn,   		{.v = thunderbird } },
+	{ MODKEY|ShiftMask,             XK_p, 		spawn,   		{.v = pcmanfmqt } },
+	{ MODKEY|ShiftMask,             XK_z, 		spawn,   		{.v = zotero } },
 };
 
 /* button definitions */
