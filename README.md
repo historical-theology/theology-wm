@@ -4,6 +4,8 @@ Dr. Corey Stephan's custom build of the suckless project's dwm with efficiency b
 The focal point of this build is the centeredmaster patch:
 https://dwm.suckless.org/patches/centeredmaster/
 
+I have the main 'centeredmaster' layout set as the default in config.h.
+
 I also have the cool autostart patch:
 https://dwm.suckless.org/patches/cool_autostart/
 
@@ -15,4 +17,4 @@ This build of dwm depends on the following being installed:
 * alacritty
 * firefox
 
-This build is meant to be used in conjunction with my homogenously Nord Theme [Theological Dotfiles](https://github.com/historical-theology/theological-dots).
+This build is meant to be used in conjunction with my homogenously Nord Theme [Theological Dotfiles](https://github.com/historical-theology/theological-dots). I specifically have dwm's colors set to Nord.
