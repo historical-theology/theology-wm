@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Theology WM
+Comment=Dr. Corey Stephan's build of dwm
+Exec=dwm-session
+Icon=dwm
+Type=XSession
