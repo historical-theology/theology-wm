@@ -12,6 +12,7 @@ https://dwm.suckless.org/patches/cool_autostart/
 To launch dwm from a display manager such as lightdm, which often prohibits using an autostart patch or script, then:
 (1) Copy dwm.desktop into /usr/share/xsessions/ with Exec=dwm-session (rather than simply Exec=dwm)
 (2) Copy dwm-session (with autostart tasks) into /usr/local/bin/ and make sure that it is executable
+(3) Copy xsetroot.sh (for my simple suckless status bar script) into the home directory and make sure that it is executable (also, modify the path to this in dwm-session, if needed)
 
 This build of dwm depends on the following being installed:
 * alacritty
