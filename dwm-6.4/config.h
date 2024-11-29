@@ -98,6 +98,7 @@ static const char *firefox[] = { "firefox", NULL};
 static const char *thunderbird[] = { "thunderbird", NULL};
 static const char *pcmanfmqt[] = { "pcmanfm-qt", NULL};
 static const char *zotero[] = { "zotero", NULL};
+static const char *texmaker[] = { "texmaker", NULL};
 static const char *lxqtleave[] = { "lxqt-leave", NULL};
 /* ThinkPad Media Controls */
 static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
@@ -150,6 +151,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t, 		spawn,   		{.v = thunderbird } },
 	{ MODKEY|ShiftMask,             XK_p, 		spawn,   		{.v = pcmanfmqt } },
 	{ MODKEY|ShiftMask,             XK_z, 		spawn,   		{.v = zotero } },
+	{ MODKEY|ShiftMask,             XK_m, 		spawn,   		{.v = texmaker } },
 	{ MODKEY|ShiftMask,             XK_x, 		spawn,   		{.v = lxqtleave } },
 // ThinkPad Media Keys
 	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
