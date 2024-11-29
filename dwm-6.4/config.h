@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -51,14 +53,15 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "thunderbird-default",     "Alert",       NULL,       0,            1,           -1 },
 //	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* autostart array from cool autostart patch */
-static const char *const autostart[] = {
-		"bash", "/home/corey/start-thinkpad.sh", NULL,
-		NULL
-};
+// static const char *const autostart[] = {
+//		"bash", "/home/corey/start-thinkpad.sh", NULL,
+//		NULL
+// };
 
 
 /* layout(s) */
@@ -95,8 +98,15 @@ static const char *firefox[] = { "firefox", NULL};
 static const char *thunderbird[] = { "thunderbird", NULL};
 static const char *pcmanfmqt[] = { "pcmanfm-qt", NULL};
 static const char *zotero[] = { "zotero", NULL};
-
-
+static const char *lxqtleave[] = { "lxqt-leave", NULL};
+/* ThinkPad Media Controls */
+static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
+/* ThinkPad Brightness Controls */
+/* To use light add this to the constant definition section. Thanks Hritik14. */
+static const char *light_up[]   = { "sudo", "/usr/bin/light",   "-A", "5", NULL };
+static const char *light_down[] = { "sudo", "/usr/bin/light",   "-U", "5", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -140,6 +150,14 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t, 		spawn,   		{.v = thunderbird } },
 	{ MODKEY|ShiftMask,             XK_p, 		spawn,   		{.v = pcmanfmqt } },
 	{ MODKEY|ShiftMask,             XK_z, 		spawn,   		{.v = zotero } },
+	{ MODKEY|ShiftMask,             XK_x, 		spawn,   		{.v = lxqtleave } },
+// ThinkPad Media Keys
+	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
+	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+// ThinkPad Brightness Keys
+	{ 0,				XF86XK_MonBrightnessUp,		spawn,	{.v = light_up} },
+	{ 0,				XF86XK_MonBrightnessDown,	spawn,	{.v = light_down} },
 };
 
 /* button definitions */
