@@ -55,6 +55,11 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "thunderbird-default",     "Alert",       NULL,       0,            1,           -1 },
 	{ "Mumble",     NULL,       NULL,       0,            1,           -1 },
+	{ "guvcview",     NULL,       NULL,       0,            1,           -1 },
+	{ "Guvcview",     NULL,       NULL,       0,            1,           -1 },
+	{ "simplescreenrecorder",     NULL,       NULL,       0,            1,           -1 },
+	{ "SimpleScreenRecorder",     NULL,       NULL,       0,            1,           -1 },
+	
 //	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
